@@ -2,8 +2,8 @@
  Get temporary email for free fo signing up into insecure & strange websites. Its mainly built for security purpose and to prevent user fro using personal email in strange sites.
 
  ## Demo Video
-[Watch the Demo](https://youtu.be/7kIcJiBjVLA?si=yvQpz-NtAqkgFr8K)
-[![Demo](Screenshot.png)](https://youtu.be/7kIcJiBjVLA?si=9vbvr3JnNg4PCgFD)
+ [Watch the Demo](https://youtu.be/XxNqEcPN3QE)
+[![Demo](Screenshot.png)](https://youtu.be/XxNqEcPN3QE)
  
 ## Key Features
 * Direct deployment - easy to deploy on vercel ( one time setup )
