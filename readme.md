@@ -12,12 +12,15 @@
 * Clean & Basic UI: Modern, responsive & professional design that works on your desktop perfectly.
 
   
-## How to deloy?
+## How to Run:
 1. Download the release or Clone this repository.
    <pre> git clone https://github.com/ReverseMohan/DisposableEmail.git </pre>
-2. Log in to Vercel:
-3. Navigate to the folder:
-  
+2. Navigate to the folder.
+   <pre> cd DisposableEmail </pre>
+4. Install the requirements.
+   <pre> pip install -r requirements.txt </pre> 
+5. Run the app
+   <pre> python app.py </pre>  
 
 ## Note: 
 This tool is intended for privacy and testing purposes. Please do not use it for illegal activities.
