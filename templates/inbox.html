@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempMail - Inbox</title>
+    <meta http-equiv="refresh" content="5">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #252525 0%, #5d5d5e 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        container{
+            max-width:800;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .header{
+            text-align:center;
+            margin-bottom:30px;
+        }
+        .email-label{
+            font-size: 14px;
+            color: #ccc;
+            letter-spacing: 1px;
+        }
+        h2{
+            font-size:22px;
+            color: #fff;
+            word-break: break-all;
+        }
+        .inbox-title{
+            font-size:18px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        .box{
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .box h3{
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .from{
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        .body-text{
+            font-size: 14px;
+            color: #fff;
+            line-height:1.5;
+        }
+        .nothing{
+            text-align: center;
+            color: #bbb;
+            padding: 40px 0;
+        }
+        actions{
+            margin-top: 30px;
+            text-align: center;
+        }
+        .actions button{background: #4CAF50;
+            border:none;
+            border-radius:5px;
+            padding: 6px 15px;
+        color: #fff;}
+        .actions button:hover{
+            background: #45a049;
+        }
+        .actions .back-btn {
+            text-decoration: none;
+            color: #fff;
+            background: #777;
+        }
+
+        .actions .back-btn:hover {
+            background: #555;
+            border-radius:5px;
+        }
+
+        .auto-refresh {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="email-label"> Your Temporary Email</div>
+            <h2>{{ email }}</h2>
+        </div>
+        
+        <div class="inbox">
+            <div class="inbox-title">
+                Inbox
+                <span style="font-size: 12px; font-weight: normal; margin-left: 10px;" class="auto-refresh">(Auto-refreshes every 5s)</span>
+            </div>
+            
+            {% if msg %}
+                {% for mail in msg %}
+                <div class="box">
+                    <h3>{{ mail.subject }}</h3>
+                    <div class="from">From: {{ mail.from }}</div>
+                    <div class="body-text">{{ mail.body_text }}</div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="nothing">
+                    <p>No messages yet.</p>
+                    <p style="font-size: 12px; color: #ccc;">Waiting for new emails...</p>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="actions">
+            <a href="/generate"><button> Generate New Email</button></a>
+            <a href="/"><button  class="back-btn"> Back</button></a>
+        </div>
+        
+    </div>
+</body>
+</html>
